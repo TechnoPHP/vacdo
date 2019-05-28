@@ -1,0 +1,13 @@
+.div-data-tables{
+	margin-top:15px;
+	margin-bottom:15px;
+}
+#custom-filter{
+	padding-bottom: 15px;
+}
+#custom-filter select{
+	display: inline-block;
+}
+#custom-filter label{
+	display: inline-block;
+}

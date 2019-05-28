@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>AclManager Plugin Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+	<style type="text/css">
+		blockquote {
+		  padding: 10px 20px;
+		  margin: 0 0 20px;
+		  font-size: 17.5px;
+		  border-left: 5px solid #eee;
+		}
+		blockquote p:last-child,
+		blockquote ul:last-child,
+		blockquote ol:last-child {
+		  margin-bottom: 0;
+		}
+		blockquote footer,
+		blockquote small,
+		blockquote .small {
+		  display: block;
+		  font-size: 80%;
+		  line-height: 1.42857143;
+		  color: #777;
+		}
+		blockquote footer:before,
+		blockquote small:before,
+		blockquote .small:before {
+		  content: '\2014 \00A0';
+		}
+		.blockquote-reverse,
+		blockquote.pull-right {
+		  padding-right: 15px;
+		  padding-left: 0;
+		  text-align: right;
+		  border-right: 5px solid #eee;
+		  border-left: 0;
+		}
+		.blockquote-reverse footer:before,
+		blockquote.pull-right footer:before,
+		.blockquote-reverse small:before,
+		blockquote.pull-right small:before,
+		.blockquote-reverse .small:before,
+		blockquote.pull-right .small:before {
+		  content: '';
+		}
+		.blockquote-reverse footer:after,
+		blockquote.pull-right footer:after,
+		.blockquote-reverse small:after,
+		blockquote.pull-right small:after,
+		.blockquote-reverse .small:after,
+		blockquote.pull-right .small:after {
+		  content: '\00A0 \2014';
+		}
+
+		code,
+		kbd,
+		pre,
+		samp {
+		  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+		}
+		code {
+		  padding: 2px 4px;
+		  font-size: 90%;
+		  color: #c7254e;
+		  background-color: #f9f2f4;
+		  border-radius: 4px;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+
+		<h3 class="center alt">&ldquo;AclManager Plugin&rdquo; Documentation by &ldquo;Nicke Califórnia&rdquo; v1.0</h3>
+
+		<hr>
+
+		<h1 class="center">&ldquo;AclManager Plugin&rdquo;</h1>
+
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 05/03/2015<br>
+					By: Nicke Califórnia<br>
+					Email: <a href="mailto:nicke_california@hotmail">nicke_california@hotmail.com</a>
+					Skype: nicke_california
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->
+
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my CakePHP Plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/nicke_california">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+
+		<hr>
+
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#thePlugin">The Plugin</a></li>
+			<li><a href="#installation">Installation</a></li>
+			<li><a href="#aclConfiguration">ACL Configuration</a></li>
+			<li><a href="#aclPluginConfiguration">AclManager Plugin Configuration</a></li>
+			<li><a href="#authModes">About Cake Authorization Modes</a></li>
+			<li><a href="#cssFiles">CSS File</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+
+		</ol>
+
+		<hr>
+
+				<h3 id="thePlugin"><strong>A) The Plugin</strong> - <a href="#toc">top</a></h3>
+				<p>This plugin is designed to work with the model of the standard CakePHP Acl, automatically identifying the type of selected authorization (ActionsAuthorize, CrudAuthorize, ControllerAuthorize), simplifying customization permissions for groups and users.</p>
+
+
+				<p>Its layout is based on the Twitter Bootstrap, made its responsive model for most screens devices.</p>
+
+		<hr>
+
+				<h3 id="installation"><strong>B) Installation</strong> - <a href="#toc">top</a></h3>
+				<blockquote>To configure this plugin CakePHP console use is necessary. To learn how to use the console follow this tutorial <a href='http://book.cakephp.org/2.0/en/console-and-shells.html' target='_blank'>here</a>.</blockquote>
+
+				<p>Steps</p>
+				<ol>
+					<li>Extract the compressed files to the directory <b>app / Plugin / AclManager</b>.</li>
+					<li>Open the <b>app / Config / bootstrap.php</b>, add the following line in the area for Plugins: <br /><code>CakePlugin::load('AclManager', array('routes' => true));</code><br />
+					<i>This command will load the plugin and facilitate routing to something like: http://yourapp/AclManagers/</i>
+					</li>
+				</ol>
+
+				<p>The Plugin has been uploaded to CakePHP, we will set the ACL now.</p>
+
+
+		<hr>
+
+				<h3 id="aclConfiguration"><strong>C) ACL Configuration</strong> - <a href="#toc">top</a></h3>
+				<blockquote>We will explain from the beginning of the ACL configuration (if you have already made the setting skip to the next step).</blockquote>
+
+				<p>To set the ACL follow the official tutorial CakePHP "<a href='http://book.cakephp.org/2.0/en/tutorials-and-examples/simple-acl-controlled-application/simple-acl-controlled-application.html'>Simple Acl controlled Application</a>" (Only the first step).</p>
+
+				<br />
+				<br />
+				<br />
+				<blockquote>
+					It is important to know that in order to use the CakePHP ACL should not insert records directly in the database, adding the behaviors you need to set the User end Group model:
+					<br />
+					<br />
+					<code> For CakePHP 2.0 $this->Auth->allow('*');</code>
+					<br />
+					<code> For CakePHP 2.1 and up $this->Auth->allow(); </code>
+					<br />
+					<br />
+					in beforeFilter() method.
+				</blockquote>
+
+				<p>Now: </p>
+				<ol>
+					<li>Before proceeding you need to create the registration screens to Group and User.</li>
+					<li>Place the "<code>$this->Auth->allow();</code>" before the filter of UsersController and GroupsController.</li>
+					<li>Add a group and following a User.</li>
+				</ol>
+				<p><i>You can use scaffolding to facilitate insertion into this part.</i></p>
+				<br />
+				<h5>Why add records through Forms and not directly in the database?</h5>
+				<p>
+					When it activated the <code>$actsAs = array('Acl' => array('type' => 'requester'));</code> in the Models User Group and the AclBehavior starts making reference to any User / Group inserted a AROs in the table "aros" in our database, and this reference is required for proper operation of the ACL. So one should not directly add to the database any User / Group, from being broken this link.
+				</p>
+		<hr>
+
+		<h3 id="aclPluginConfiguration"><strong>D) AclManager Plugin Configuration</strong> - <a href="#toc">top</a></h3>
+
+		<p>Now we have registered at least one User and Group, we will set the access permissions within our ACL.</p>
+		<br />
+		<h5>Building Acos List</h5>
+		<p>Basically the AROs would be the entities that make access and OCs accessed the entities already have the AROs (users / groups), we must now build a list of "path for access."</p>
+		<p>We will use the CakeBake again:</p>
+
+		<ol>
+			<li>Open the console.</li>
+			<li>type the following command: <code>./Console/cake AclManager.AclExtras acoSync</code></li>
+		</ol>
+		<p><i>The Plugin tracked and cataloged all our controllers / actions and stored in the database.</i></p>
+
+		<br />
+		<h5>Adding Group Permission to Manage de Plugin.</h5>
+
+	      <p>It's the last part of AclManager configuration, let's set the permission to SuperUser Group:</p>
+	      <p class='space-top'>In Cake Console put <code>>./Console/cake AclManager.AclExtras setSU Group.1</code>, where 'Group' is the model where we have de SuperUser Group and '.1' is the ID of SuperUser Group on database table. I'm guessing you are using the original structure of ACL (learned in tutorial).</p>
+
+	      <p class='space-top'>The plugin has been configured, we will access the configuration Action please log in first as board administrator, then go to the following url in a browser: <code>yourappurl/AclManagers</code>, set the permissions for the rest of the controllers / actions of its application, the AclManager manage permissions both specific users and groups, just click the options, and each time you add one action controller update the ACO list through the Console or by clicking the button "Sync Acos" from within the plugin.</p>
+
+
+	      <p class='space-top'>Now remove:</p>
+	      <p><code>// For CakePHP 2.0 $this->Auth->allow('*');</code></p>
+	      <p><code>// For CakePHP 2.1 and up $this->Auth->allow();</code></p>
+	      <p>from <code>beforeFilter()</code> of Groups and Users Controller.</p>
+
+
+		<hr>
+
+		<h3 id="authModes"><strong>E) About Cake Authorization Modes</strong> - <a href="#toc">top</a></h3>
+		<p>This mode works with the database controllers/actions permission based on ACOS table. Here we can set a permission to a especific action.</p>
+
+
+		<h3 class='space-top'>CrudAuthorize Mode</h3>
+		<p>This mode is used also for REST applications, but little used in everyday applications,  it permissions are set only in controllers, where you set the permissions through the actions: Create, Update, Read, Delete. The CRUD Mode works with some standard prefixes that identify the action, for example an action in Controller Posts serving only for reading data would look like this: <code>index_news</code> or <code>view_news</code>, a breeding action example: <code>add_news</code>.</p>
+		<blockquote>
+			<p>
+			  You can actually watch the prefixes standards used in ActionMap the Core file called CrudAuthorize.php
+			</p>
+			<p>Full path (root of CakePHP App):</p>
+			<p><code>lib\Cake\Controller\Component\Auth\CrudAuthorize.php</code></p>
+		</blockquote>
+		<p class='space-top'>You can categorize your actions the way you want and define parameters in <code>ActionMap</code> in the <code>beforeFilter()</code> of each controller or the AppController. More information about the authorization forms <a href='http://book.cakephp.org/2.0/en/core-libraries/components/authentication.html'>click here</a> and read the documentation.</p>
+
+		<br />
+		<p><i>Now (after login) you can log in and access the path <code>http://yourapp/AclManagers</code> and configure other access permissions.</i></p>
+
+		<hr>
+
+
+		<h3 id="cssFiles"><strong>F) CSS File</strong> - <a href="#toc">top</a></h3>
+
+		<p>The plugin uses based on the Twitter Bootstrap therefore does not possess many changes in the layout. The customization file is located in <code>AclManager/webroot/css/bootstrapPersonalizado.css</code></p>
+
+		<p>The plugin also comes with some libraries and assets volunteered to work correctly, to disable the loading of some comment on the desired line in <code>AclManager/View/Elements/pluginsLoad.ctp</code></p>
+
+		<br />
+		<p><b>In use we have</b></p>
+		<ul>
+			<li>jQuery.Noty</li>
+			<li>jQuery.DataTables</li>
+			<li>Font Awesome</li>
+		</ul>
+
+
+		<hr>
+
+		<h3 id="credits"><strong>G) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+
+		<p>I've used the following libraries and assets, icons files as listed.
+
+		<ul>
+			<li><a href='http://getbootstrap.com/'>Twitter Bootstrap</a></li>
+			<li><a href='https://jquery.com/'>jQuery</a></li>
+			<li><a href='http://ned.im/noty/#/about'>jQuery.Noty</a></li>
+			<li><a href='https://www.datatables.net/'>jQuery.DataTables</a></li>
+			<li><a href='http://fortawesome.github.io/Font-Awesome/'>Font Awesome</a></li>
+			<li>(fork) <a href='https://github.com/markstory/acl_extras/'>MarkStory AclExtras</a></li>
+		</ul>
+
+		<hr>
+
+		<p>Once again, thank you so much for purchasing this CakePHP Plugin. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p>
+
+		<p class="append-bottom alt large"><strong>Nicke Califórnia</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
