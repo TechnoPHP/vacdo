@@ -1,0 +1,1 @@
+<?php echo $this->Html->image($userimage,array("alt"=>'User profile','class'=>'thumbnail img-fluid')); ?>

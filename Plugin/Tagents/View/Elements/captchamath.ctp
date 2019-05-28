@@ -1,0 +1,1 @@
+<div class="pull-right"><strong><?php echo  __($settings['mlabel']) .  $settings['stringOperation'].' = ?';?></strong></div>
