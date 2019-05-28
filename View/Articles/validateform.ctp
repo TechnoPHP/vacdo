@@ -1,0 +1,1 @@
+<?php echo (!empty($error))?$error[0]:null; ?>
